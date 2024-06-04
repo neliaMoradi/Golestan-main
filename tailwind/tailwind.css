@@ -1,0 +1,2957 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    direction: rtl;
+    scroll-behavior: smooth;
+  }
+
+  @font-face {
+    font-family: sanss;
+    src: url(../fonts/IRANSansWeb-Light_1.eot);
+    src: url(../fonts/IRANSansWeb-Light_1.ttf);
+    src: url(../fonts/IRANSansWeb-Light_1.woff);
+    src: url(../fonts/IRANSansWeb-Light_1.woff2);
+  }
+
+  @keyframes animate-1 {
+    from {
+    }
+    to {
+      overflow: visible;
+    }
+  }
+
+  @keyframes animate-2 {
+    from {
+    }
+    to {
+      opacity: 1;
+      transform: translatey(0px);
+    }
+  }
+  @keyframes animate-3 {
+    from {
+    }
+    to {
+      opacity: 1;
+      transform: translatex(0px);
+    }
+  }
+
+  @keyframes animate-4 {
+    from {
+    }
+    to {
+      opacity: 1;
+      transform: translateZ(0px);
+    }
+  }
+}
+
+@layer components {
+  .menu {
+    @apply desktop:w-[100%]
+    desktop:h-[100.5px]
+        desktop:pt-[7.5px] 
+        desktop:px-[0px] 
+        desktop:pb-[26px]
+         desktop:bg-[#282828] 
+         desktop:sticky
+          desktop:top-0 
+          desktop:z-[1000] 
+          mobile:sticky
+          mobile:top-0
+          mobile:z-[30000000]
+          desktop:cursor-pointer
+          desktop:overflow-hidden;
+  }
+  .menu {
+    animation-duration: 1000ms;
+    animation-name: animate-1;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  .top__mobile {
+    @apply desktop:hidden
+    mobile:w-[100%]
+    mobile:h-[181px]
+    mobile:bg-[#282828] 
+    mobile:flex
+    mobile:flex-col
+    mobile:flex-nowrap
+    mobile:justify-between
+    mobile:pt-[8px]
+    mobile:pb-[18px]
+    mobile:sticky
+       mobile:top-0 
+      mobile:z-[200000];
+  }
+
+  .top__mobile > .img__mobile {
+    @apply mobile:w-[170px]
+  mobile:h-[105px]
+  mobile:self-center
+  dark:grayscale
+  desktop:hidden;
+  }
+
+  .top__mobile > .img__mobile > img {
+    @apply mobile:w-[100%]
+    mobile:h-[100%];
+  }
+  .top__mobile > #hamberger {
+    @apply desktop:hidden
+    mobile:hidden
+    mobile:self-start
+    mobile:mr-[25px];
+  }
+  .top__mobile > #close__menu {
+    @apply desktop:hidden
+    mobile:absolute
+    mobile:right-[27px]
+    mobile:top-[140px]
+    mobile:hidden;
+  }
+  .menu__mobile > label[for="close__menu"] {
+    @apply desktop:hidden
+    mobile:absolute
+    mobile:w-[20px]
+    mobile:h-[20px]
+    mobile:bg-[red]
+    dark:bg-[whitesmoke]
+    dark:text-[black]
+    mobile:left-[27px]
+    mobile:top-0
+    mobile:text-center
+    mobile:leading-[20px]
+    mobile:text-[20px]
+    mobile:text-[white]
+    mobile:rounded-[5px]
+    mobile:cursor-pointer;
+  }
+  .top__mobile > #hamberger:checked ~ .menu__mobile {
+    @apply mobile:right-0
+    mobile:top-[171px]
+    mobile:transition-all
+    mobile:duration-1000;
+  }
+  .top__mobile > #close__menu:checked ~ .menu__mobile {
+    @apply mobile:right-0
+    mobile:top-[-400%]
+    mobile:transition-all
+    mobile:duration-1000;
+  }
+  .top__mobile
+    > #hamberger:checked
+    ~ label[for="hamberger"]
+    > .hamberger__items {
+    @apply mobile:rounded-none
+    mobile:h-[5px];
+  }
+  .top__mobile > #hamberger:checked ~ label[for="hamberger"] {
+    @apply mobile:h-[25px]
+    mobile:w-[28px];
+  }
+
+  .top__mobile > label[for="hamberger"] {
+    @apply desktop:hidden
+    mobile:self-start
+    mobile:h-[20px]
+    mobile:w-[30px]
+    mobile:flex
+    mobile:flex-col
+    mobile:flex-wrap
+    mobile:justify-between
+    mobile:absolute
+    mobile:right-[27px]
+    mobile:top-[140px]
+    mobile:cursor-pointer
+    mobile:transition-all
+    mobile:duration-1000;
+  }
+  .top__mobile > label[for="hamberger"] > .hamberger__items {
+    @apply mobile:w-[100%]
+    mobile:h-[4px]
+    mobile:bg-[lightgrey]
+    mobile:brightness-[85%]
+    mobile:rounded-[8px]
+    mobile:transition-all
+    mobile:duration-1000;
+  }
+  .top__mobile > label[for="hamberger"]:hover > .hamberger__items {
+    @apply mobile:bg-[white]
+    mobile:brightness-[100%];
+  }
+
+  .menu__mobile {
+    @apply desktop:hidden
+    mobile:w-[100%]
+    mobile:h-[360px]
+    mobile:bg-[#282828] 
+    mobile:absolute
+    mobile:right-0
+    mobile:top-[-1000%]
+    mobile:z-[-2000]
+    mobile:flex
+    mobile:flex-row
+    mobile:flex-wrap
+ 
+    mobile:transition-all
+    mobile:duration-1000
+    mobile:pt-[8px];
+  }
+
+  .menu__mobile > nav {
+    @apply mobile:w-[100%]
+   
+   mobile:flex
+   mobile:flex-col
+   mobile:flex-nowrap
+   mobile:items-start
+   mobile:gap-y-[16px]
+   mobile:pr-[31px];
+  }
+
+  .menu > nav {
+    @apply desktop:w-fit 
+    desktop:h-[100%]
+     desktop:flex
+      desktop:flex-row
+     desktop:flex-nowrap
+      desktop:justify-center
+       desktop:items-end 
+       desktop:gap-x-[20px]
+       desktop:mr-[31.5%]
+
+       mobile:hidden;
+  }
+
+  .items {
+    @apply desktop:w-fit
+          desktop:h-fit
+          desktop:flex
+          desktop:flex-row
+          desktop:flex-nowrap
+          desktop:items-end
+          mobile:w-[100%]
+          mobile:h-fit;
+  }
+
+  .items > a {
+    @apply desktop:w-fit
+              desktop:h-auto
+              desktop:no-underline
+              desktop:flex
+              desktop:flex-row
+              desktop:flex-nowrap
+              desktop:justify-end
+              desktop:items-center
+              desktop:font-[sanss]
+              desktop:text-[16px]
+              desktop:text-[whitesmoke]
+              desktop:opacity-[0.7]
+              mobile:w-fit
+              mobile:h-auto
+              mobile:no-underline
+              mobile:font-[sanss]
+              mobile:text-[14px]
+              mobile:text-[whitesmoke]
+              mobile:opacity-[0.7];
+  }
+
+  .items:hover > a {
+    @apply desktop:opacity-[1]
+    mobile:opacity-[1];
+  }
+  .item__1 > a {
+    @apply desktop:opacity-[1]
+    mobile:opacity-[1];
+  }
+
+  .item__1__2 > a {
+    @apply desktop:opacity-[0.7]
+    mobile:opacity-[0.7];
+  }
+  .item__2 {
+    @apply desktop:relative
+     mobile:relative;
+  }
+
+  .item__2 > .sub__menu__1 {
+    @apply desktop:w-[195px]
+              desktop:h-[325px]
+              desktop:absolute
+              desktop:top-[28px]
+              desktop:right-[-20px]
+              desktop:bg-[#2b2b2b]
+              desktop:hidden
+               mobile:w-[195px]
+              mobile:h-[325px]
+              mobile:absolute
+              mobile:top-[-100%]
+              mobile:right-[-31px]
+              mobile:bg-[#2b2b2b]
+              mobile:hidden;
+  }
+
+  .item__2:hover > .sub__menu__1 {
+    @apply desktop:block;
+  }
+
+  .sub__menu__1__items {
+    @apply desktop:w-[100%]
+              desktop:h-fit
+              desktop:flex
+              desktop:flex-wrap
+              desktop:flex-col
+              desktop:py-[10px]
+              desktop:px-[20px]
+              mobile:w-[100%]
+              mobile:h-fit
+              mobile:flex
+              mobile:flex-wrap
+              mobile:flex-col
+              mobile:py-[10px]
+              mobile:px-[20px];
+  }
+
+  .sub__menu__1__items > a {
+    @apply desktop:block
+                  desktop:w-[100%]
+                  desktop:h-auto
+                  desktop:no-underline
+                  desktop:opacity-[0.7]
+                  desktop:transition-all
+                  desktop:duration-300
+                  desktop:text-[whitesmoke]
+                  mobile:block
+                  mobile:w-[100%]
+                  mobile:h-auto
+                  mobile:no-underline
+                  mobile:opacity-[0.7]
+                  mobile:transition-all
+                  mobile:duration-300
+                  mobile:text-[whitesmoke];
+  }
+  .sub__menu__1__items > a:hover {
+    @apply desktop:opacity-[1]
+     mobile:opacity-[1];
+  }
+
+  .item__3 {
+    @apply desktop:relative;
+  }
+
+  .item__3 > .sub__menu__2 {
+    @apply desktop:w-[208px]
+              desktop:h-[560px]
+              desktop:absolute
+              desktop:top-[28px]
+              desktop:right-[-20px]
+              desktop:bg-[#2b2b2b]
+              desktop:hidden
+              mobile:hidden;
+  }
+
+  .item__3:hover > .sub__menu__2 {
+    @apply desktop:block;
+  }
+
+  .sub__menu__2__items {
+    @apply desktop:w-[100%]
+              desktop:h-fit
+              desktop:flex
+              desktop:flex-wrap
+              desktop:flex-col
+              desktop:py-[10px]
+              desktop:px-[20px]
+              mobile:hidden;
+  }
+
+  .sub__menu__2__items > a {
+    @apply desktop:block
+                  desktop:w-[100%]
+                  desktop:h-auto
+                  desktop:no-underline
+                  desktop:opacity-[0.7]
+                  desktop:transition-all
+                  desktop:duration-300   
+                  desktop:text-[whitesmoke];
+  }
+  .sub__menu__2__items > a:hover {
+    @apply desktop:opacity-[1];
+  }
+
+  .item__4 {
+    @apply desktop:relative;
+  }
+  .item__4__2 > a {
+    @apply desktop:opacity-[1]
+    mobile:opacity-[1];
+  }
+
+  .item__4:hover > .sub__menu__3 {
+    @apply desktop:block;
+  }
+
+  .sub__menu__3 {
+    @apply desktop:w-[180px]
+  desktop:h-[230px]
+  desktop:absolute
+  desktop:top-[28px]
+  desktop:right-[-20px]
+  desktop:bg-[#2b2b2b]
+  desktop:hidden
+  mobile:hidden;
+  }
+
+  .sub__menu__3__items {
+    @apply desktop:w-[100%]
+  desktop:h-fit
+  desktop:flex
+  desktop:flex-wrap
+  desktop:flex-col
+  desktop:py-[10px]
+  desktop:px-[20px];
+  }
+
+  .sub__menu__3__items > a {
+    @apply desktop:block
+  desktop:w-[100%]
+  desktop:h-[auto]
+  desktop:no-underline
+  desktop:opacity-[0.7]
+  desktop:transition-all
+  desktop:text-[whitesmoke]
+  desktop:duration-300;
+  }
+
+  .sub__menu__3__items > a:hover {
+    @apply desktop:opacity-[1];
+  }
+
+  .item__7 {
+    @apply desktop:relative;
+  }
+
+  .item__7:hover > .sub__menu__4 {
+    @apply desktop:block;
+  }
+
+  .sub__menu__4 {
+    @apply desktop:w-[185px]
+  desktop:h-[140px]
+  desktop:absolute
+  desktop:top-[28px]
+  desktop:right-[-20px]
+  desktop:bg-[#2b2b2b]
+  desktop:hidden
+  desktop:mobile:hidden;
+  }
+
+  .sub__menu__4__items {
+    @apply desktop:w-[100%]
+  desktop:h-fit
+  desktop:flex
+  desktop:flex-col
+  desktop:flex-wrap
+  desktop:py-[10px]
+  desktop:px-[20px]
+  mobile:hidden;
+  }
+
+  .sub__menu__4__items > a {
+    @apply desktop:block
+    desktop:w-[100%]
+    desktop:h-auto
+    desktop:no-underline
+    desktop:opacity-[0.7]
+    desktop:transition-all
+    desktop:duration-300
+    desktop:text-[whitesmoke];
+  }
+
+  .sub__menu__4__items > a:hover {
+    @apply desktop:opacity-[1];
+  }
+
+  .line {
+    @apply desktop:block
+    desktop:w-[1px]
+  desktop:h-[30px]
+  desktop:bg-[lightgray]
+  desktop:opacity-[0.3]
+  mobile:hidden;
+  }
+
+  .menu > .img {
+    @apply desktop:w-[170px]
+  desktop:h-[105px]
+  desktop:absolute
+  desktop:right-[17%]
+  desktop:top-[42.5%]
+  mobile:hidden
+  desktop:block;
+  }
+
+  .menu > .img > img {
+    @apply desktop:block
+    desktop:w-[100%]
+    desktop:h-[100%]
+    mobile:hidden
+    dark:grayscale;
+  }
+
+  .lottery {
+    @apply desktop:w-[100%]
+  desktop:h-fit
+  desktop:flex
+  desktop:flex-row
+  desktop:flex-wrap
+  desktop:justify-center
+  mobile:w-[100%]
+  mobile:h-fit
+ mobile:flex
+ mobile:flex-row
+ mobile:flex-wrap
+ mobile:justify-center;
+  }
+
+  .lottery__main {
+    @apply desktop:w-[100%]
+    desktop:h-fit
+    desktop:flex
+    desktop:flex-row
+    desktop:flex-nowrap
+    mobile:w-[100%]
+    mobile:h-fit
+   mobile:flex
+   mobile:flex-row
+   mobile:flex-wrap;
+  }
+
+  .lottery__main {
+    background-image: linear-gradient(190deg, #fbfbfb 0%, #d2d2d2 100%);
+  }
+
+  .lottery__main__right {
+    @apply desktop:w-fit
+      desktop:h-fit
+      desktop:pr-[270px]
+      desktop:pt-[65px]
+      desktop:overflow-hidden
+      desktop:pb-[65px]
+      mobile:w-[100%]
+      mobile:h-fit
+      mobile:pr-[44px]
+      mobile:pt-[20px]
+      mobile:overflow-hidden;
+  }
+
+  .lottery__main__right > h2 {
+    @apply desktop:text-[30px]
+        desktop:text-[#ff0000]
+        dark:text-[black]
+        desktop:font-light
+        desktop:font-[sanss]
+       mobile:text-[30px]
+       mobile:text-[#ff0000]
+       mobile:font-light
+       mobile:font-[sanss];
+  }
+
+  .lottery__main__right > h3 {
+    @apply desktop:font-[sanss]
+        desktop:text-[20px]
+        desktop:text-[#58595b]
+        desktop:font-light
+        desktop:pt-[8px]
+        desktop:mb-[30px]
+        mobile:font-[sanss]
+        mobile:text-[20px]
+        mobile:text-[#58595b]
+        mobile:font-light
+        mobile:pt-[8px]
+        mobile:mb-[18px];
+  }
+  .lottery__main__right > p {
+    @apply desktop:text-[#898989]
+     desktop:w-[429px]
+        desktop:text-[16px]
+        desktop:font-[sanss]
+        desktop:leading-[33px]
+        desktop:mb-[37px]
+        desktop:translate-y-[-150px]
+        desktop:opacity-[0]
+        mobile:text-[#898989]
+        mobile:text-[16px]
+        mobile:font-[sanss]
+        mobile:leading-[33px]
+        mobile:mb-[20px]
+        mobile:translate-y-[-150px]
+        mobile:opacity-[0];
+  }
+  .lottery__main__right > p > br {
+    @apply mobile:hidden;
+  }
+
+  .lottery__main__right > p {
+    animation-name: animate-2;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 500ms;
+  }
+
+  .lottery__main__right > a {
+    @apply desktop:block
+          desktop:no-underline
+          desktop:text-[#7c7d7e]
+          desktop:text-[15px]
+          desktop:font-[sanss]
+          desktop:w-[133.5px]
+          desktop:h-[40.5px]
+          desktop:bg-[#ffffff]
+          desktop:text-center
+          desktop:leading-[40.5px]
+          desktop:border-[0.8px]
+          desktop:border-solid
+          desktop:border-[#c8c8c8]
+          desktop:rounded-[8px]
+         mobile:block
+         mobile:no-underline
+         mobile:text-[#7c7d7e]
+         mobile:text-[15px]
+         mobile:font-[sanss]
+         mobile:w-[133.5px]
+         mobile:h-[40.5px]
+         mobile:bg-[#ffffff]
+         mobile:text-center
+         mobile:leading-[40.5px]
+         mobile:border-[0.8px]
+         mobile:border-solid
+         mobile:border-[#c8c8c8]
+         mobile:rounded-[8px];
+  }
+
+  .lottery__main__right > a:hover {
+    @apply desktop:bg-[#ff0000]
+            desktop:text-[whitesmoke]
+            mobile:bg-[#ff0000]
+            mobile:text-[whitesmoke]
+            dark:bg-[black];
+  }
+
+  .lottery__main__left {
+    @apply desktop:w-fit
+      desktop:h-fit
+      desktop:pt-[29px]
+      desktop:overflow-hidden
+      desktop:pr-[64px]
+      mobile:w-[100%]
+      mobile:h-fit
+      mobile:overflow-hidden;
+  }
+
+  .lottery__main__left > .image {
+    @apply desktop:w-[350px]
+        desktop:h-[400px]
+        desktop:mr-[140px]
+        desktop:translate-y-[-400px]
+        desktop:opacity-[0]
+        mobile:w-[350px]
+        mobile:h-[400px]
+        mobile:mr-[70px]
+        mobile:pb-[5px]
+        mobile:translate-y-[-400px]
+        mobile:opacity-[0];
+  }
+
+  .lottery__main__left > .image {
+    animation-name: animate-2;
+    animation-duration: 1500ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 500ms;
+  }
+
+  .lottery__main__left > .image > img {
+    @apply desktop:w-[100%]
+        desktop:h-[100%]
+       mobile:w-[100%]
+       mobile:h-[100%]
+dark:grayscale;
+  }
+
+  .lottery__bottom {
+    @apply desktop:w-[98.5%]
+    desktop:h-[18px]
+    desktop:border-b-[1px]
+    desktop:border-solid
+    desktop:border-b-[#3d3d3d55]
+    mobile:hidden;
+  }
+
+  .introduction {
+    @apply desktop:w-[100%]
+    desktop:h-fit
+    desktop:pt-[60px]
+    desktop:flex
+    desktop:justify-center
+    desktop:overflow-hidden
+    mobile:w-[100%]
+    mobile:h-fit
+    mobile:pt-[47px]
+    
+    mobile:flex
+    mobile:flex-row
+    mobile:flex-wrap
+    mobile:justify-center
+    mobile:overflow-hidden;
+  }
+
+  .introduction__center {
+    @apply desktop:w-[48%]
+      desktop:h-fit
+      desktop:translate-x-[150%]
+      desktop:opacity-[0]
+      mobile:w-[100%]
+      mobile:h-fit
+      mobile:translate-x-[150%]
+      mobile:opacity-[0]
+      mobile:pr-[25px]
+    mobile:pl-[25px]
+  
+  }
+  .introduction__bottom {
+    @apply desktop:hidden
+    mobile:w-[98%]
+    mobile:h-[30px]
+   mobile:border-t-[1px]
+   mobile:border-solid
+   mobile:border-t-[#3d3d3d44];
+  }
+
+  .introduction__center {
+    animation-name: animate-3;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  .introduction__center > h2 {
+    @apply desktop:font-[sanss]
+        desktop:text-[20px]
+        desktop:text-[#ff0000]
+        desktop:font-bold
+        desktop:mb-[13px]
+       mobile:font-[sanss]
+       mobile:text-[18px]
+       mobile:text-[#ff0000]
+       mobile:font-bold
+       mobile:mb-[13px]
+       dark:text-[black];
+  }
+  .introduction__center > p {
+    @apply desktop:text-[16px]
+        desktop:font-[sanss]
+        desktop:text-[#7a7a7a]
+        desktop:leading-[36px]
+        desktop:text-justify
+        desktop:mb-[34px]
+       mobile:text-[15px]
+       mobile:font-[sanss]
+       mobile:text-[#7a7a7a]
+       mobile:leading-[36px]
+       mobile:text-justify
+       mobile:mb-[34px];
+  }
+  .introduction__center > p > span {
+    @apply desktop:text-[#ff0000]
+    mobile:text-[#ff0000]
+    dark:text-[black];
+  }
+
+  .introduction__center__p {
+    margin-bottom: 55px !important;
+  }
+
+  .sections {
+    @apply desktop:w-[100%]
+    desktop:h-[394px]
+    desktop:flex
+    desktop:justify-center
+    mobile:hidden;
+  }
+
+  .sections__main {
+    @apply desktop:w-[98%]
+      desktop:h-[100%]
+      desktop:border-b-[2px]
+      desktop:border-solid
+      desktop:border-b-[#d3d3d399]
+      desktop:pt-[4px]
+      desktop:flex
+      desktop:justify-center;
+  }
+
+  .sections__center {
+    @apply desktop:w-[802px]
+      desktop:h-[251px]
+      desktop:flex
+      desktop:flex-row
+      desktop:flex-wrap
+      desktop:gap-x-[20px];
+  }
+
+  .sections__center {
+    perspective: 800px;
+  }
+
+  .sections__section {
+    @apply desktop:w-[185px]
+        desktop:h-[100%]
+        desktop:border-b-[1px]
+        desktop:border-b-[#d3d3d399]
+        desktop:border-solid
+        desktop:flex
+        desktop:flex-col
+        desktop:flex-wrap
+        desktop:opacity-[0];
+  }
+  .sections__section {
+    animation-name: animate-3;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transform: translateZ(-300px);
+  }
+
+  .sections__section__img {
+    @apply desktop:w-[100%]
+          desktop:h-[185px];
+  }
+  .sections__section__img > img {
+    @apply desktop:w-[100%]
+          desktop:h-[100%]
+          dark:grayscale;
+  }
+
+  .sections__section__text {
+    @apply desktop:w-[100%]
+          desktop:flex
+          desktop:flex-row
+          desktop:flex-wrap
+          desktop:justify-center
+          desktop:items-center
+          desktop:text-[16px]
+          desktop:text-[#7c7d7e]
+          desktop:font-[sanss];
+  }
+  .sections__section__text {
+    height: calc(100% - 185px);
+  }
+
+  .rice {
+    @apply desktop:w-[100%]
+          desktop:h-[564px]
+          desktop:pt-[16px]
+          desktop:flex
+          desktop:flex-col
+          desktop:flex-wrap
+          desktop:items-center
+          mobile:w-[100%]
+          mobile:h-[266px]
+          mobile:relative;
+  }
+
+  .rice__img {
+    @apply desktop:w-[100%]
+            desktop:h-[510px]
+            desktop:flex
+            desktop:flex-row
+            desktop:flex-wrap
+            desktop:relative
+            mobile:w-[100%]
+            mobile:h-[85%];
+  }
+
+  .rice__img > img {
+    @apply desktop:w-[100%]
+            desktop:h-[490px]
+            desktop:object-cover
+            mobile:w-[100%]
+            mobile:h-[100%]
+            mobile:object-cover
+            dark:grayscale;
+  }
+
+  .rice__img__bottom {
+    @apply desktop:w-[100%]
+              desktop:h-[21px]
+              desktop:bg-[#e9d69f]
+              mobile:w-[100%]
+              mobile:h-[15%]
+              mobile:bg-[#e9d69f]
+              dark:bg-[black];
+  }
+  .rice__img__absolute {
+    @apply desktop:w-[290px]
+              desktop:h-[97px]
+              desktop:bg-[#ed1c24]
+              desktop:absolute
+              desktop:bottom-0
+              desktop:right-[360px]
+              desktop:pr-[17px]
+              desktop:pb-[14px]
+              desktop:flex
+              desktop:flex-col
+              desktop:flex-wrap
+              desktop:justify-between
+              mobile:w-[100%]
+              mobile:h-[93px]
+              mobile:bg-[#ed1c24]
+              mobile:absolute
+              mobile:bottom-0
+              mobile:right-0
+              mobile:pr-[3px]
+              mobile:pb-[10px]
+              mobile:flex
+              mobile:flex-col
+              mobile:flex-wrap
+              mobile:justify-between
+              dark:bg-[#2b2b2b];
+  }
+
+  .rice__img__absolute > h2 {
+    @apply desktop:w-[100%]
+                desktop:pt-[5px]
+                desktop:pr-[20px]
+                desktop:text-[29px]
+                desktop:font-[sanss]
+                desktop:text-[whitesmoke]
+                desktop:font-extralight
+               mobile:w-[100%]
+               mobile:pt-[5px]
+               mobile:pr-[20px]
+               mobile:text-[29px]
+               mobile:font-[sanss]
+               mobile:text-[whitesmoke]
+               mobile:font-extralight;
+  }
+
+  .rice__img__absolute > h3 {
+    @apply desktop:w-[100%]
+                desktop:pr-[20px]
+                desktop:text-[16px]
+                desktop:font-[sanss]
+                desktop:text-[whitesmoke]
+                desktop:font-extralight
+               mobile:w-[100%]
+               mobile:pr-[20px]
+               mobile:text-[16px]
+               mobile:font-[sanss]
+               mobile:text-[whitesmoke]
+               mobile:font-extralight;
+  }
+
+  .rice__bottom {
+    @apply desktop:w-[98%]
+            desktop:h-[38px]
+            desktop:border-b-[2px]
+            desktop:border-b-[#d3d3d399]
+            desktop:border-solid;
+  }
+
+  .iran__food {
+    @apply desktop:w-[100%]
+            desktop:h-fit
+            desktop:pt-[54px]
+            desktop:flex
+            desktop:flex-row
+            desktop:flex-wrap
+            desktop:justify-center
+            mobile:w-[100%]
+            mobile:h-fit
+            mobile:pt-[54px]
+            mobile:flex
+            mobile:flex-row
+            mobile:flex-wrap
+            mobile:justify-center;
+  }
+
+  .iran__food__center {
+    @apply desktop:w-[48%]
+              desktop:h-fit
+              mobile:pr-[25px]
+              mobile:pl-[25px]
+              mobile:w-[100%]
+              mobile:h-fit
+              mobile:pb-[97px];
+  }
+
+  .iran__food__center > h2 {
+    @apply desktop:text-[#ff0000]
+              desktop:text-[20px]
+              desktop:font-[sanss]
+              desktop:mb-[15px]
+              mobile:text-[#ff0000]
+              mobile:text-[18px]
+              mobile:font-[sanss]
+              mobile:font-bold
+              mobile:mb-[15px]
+              dark:text-[black];
+  }
+
+  .iran__food__center > p {
+    @apply desktop:font-[sanss]
+                desktop:text-[#818588]
+                desktop:text-[15px]
+                desktop:text-justify
+                desktop:leading-[36px]
+                desktop:mb-[43px]
+                mobile:font-[sanss]
+                mobile:text-[#818588]
+                mobile:text-[15px]
+                mobile:text-justify
+                mobile:leading-[36px]
+                mobile:mb-[55px];
+  }
+  .iran__food__center__link {
+    @apply desktop:w-[100%]
+                desktop:flex
+                desktop:flex-row
+                desktop:flex-wrap
+                desktop:gap-x-[5px]
+                mobile:w-[100%]
+                mobile:flex
+                mobile:flex-row
+                mobile:flex-wrap
+                mobile:gap-x-[5px];
+  }
+
+  .iran__food__center__link > a {
+    @apply desktop:w-[136px]
+                desktop:h-[40px]
+                desktop:border-[0.8px]
+                desktop:border-solid
+                desktop:border-[#c8c8c8]
+                desktop:rounded-[8px]
+                desktop:flex
+                desktop:items-center
+                desktop:justify-center
+                desktop:text-[15px]
+                desktop:font-[sanss]
+                desktop:text-[#818588]
+                desktop:no-underline
+                desktop:transition-all
+                desktop:duration-[500ms]
+               mobile:w-[136px]
+               mobile:h-[40px]
+               mobile:border-[0.8px]
+               mobile:border-solid
+               mobile:border-[#c8c8c8]
+               mobile:rounded-[8px]
+               mobile:flex
+               mobile:items-center
+               mobile:justify-center
+               mobile:text-[15px]
+               mobile:font-[sanss]
+               mobile:text-[#818588]
+               mobile:no-underline
+               mobile:transition-all
+               mobile:duration-[500ms];
+  }
+
+  .iran__food__center__link > a:hover {
+    @apply desktop:bg-[#ff0000]
+                desktop:text-[whitesmoke]
+                mobile:bg-[#ff0000]
+                mobile:text-[whitesmoke]
+                dark:bg-[black];
+  }
+
+  .tea {
+    @apply desktop:w-[100%]
+    desktop:h-[548px]
+    desktop:flex
+    desktop:flex-col
+    desktop:flex-wrap
+    desktop:items-center
+    mobile:w-[100%]
+    mobile:h-[266px]
+    mobile:relative;
+  }
+
+  .tea__img {
+    @apply desktop:w-[100%]
+      desktop:h-[510px]
+      desktop:flex
+      desktop:flex-row
+      desktop:flex-wrap
+      desktop:relative
+      mobile:w-[100%]
+      mobile:h-[85%];
+  }
+
+  .tea__img > img {
+    @apply desktop:w-[100%]
+        desktop:h-[490px]
+        desktop:object-cover
+        mobile:w-[100%]
+        mobile:h-[100%]
+        mobile:object-cover
+        dark:grayscale;
+  }
+
+  .tea__img__bottom {
+    @apply desktop:w-[100%]
+        desktop:h-[21px]
+        desktop:bg-[#e9d69f]
+        mobile:w-[100%]
+        mobile:h-[15%]
+        mobile:bg-[#e9d69f]
+        dark:bg-[black];
+  }
+  .tea__img__absolute {
+    @apply desktop:w-[290px]
+        desktop:h-[97px]
+        desktop:bg-[#ed1c24]
+        desktop:absolute
+        desktop:bottom-0
+        desktop:right-[360px]
+        desktop:pr-[17px]
+        desktop:pb-[14px]
+        desktop:flex
+        desktop:flex-col
+        desktop:flex-wrap
+        desktop:justify-between
+        mobile:w-[100%]
+              mobile:h-[93px]
+              mobile:bg-[#ed1c24]
+              mobile:absolute
+              mobile:bottom-0
+              mobile:right-0
+              mobile:pr-[3px]
+              mobile:pb-[10px]
+              mobile:flex
+              mobile:flex-col
+              mobile:flex-wrap
+              mobile:justify-between
+              dark:bg-[#2b2b2b];
+  }
+
+  .tea__img__absolute > h2 {
+    @apply desktop:w-[100%]
+          desktop:pt-[5px]
+          desktop:pr-[20px]
+          desktop:text-[29px]
+          desktop:font-[sanss]
+          desktop:text-[whitesmoke]
+          desktop:font-extralight
+          mobile:w-[100%]
+          mobile:pt-[5px]
+          mobile:pr-[20px]
+          mobile:text-[29px]
+          mobile:font-[sanss]
+          mobile:text-[whitesmoke]
+          mobile:font-extralight;
+  }
+
+  .tea__img__absolute > h3 {
+    @apply desktop:w-[100%]
+          desktop:pr-[20px]
+          desktop:text-[16px]
+          desktop:font-[sanss]
+          desktop:text-[whitesmoke]
+          desktop:font-extralight
+          mobile:w-[100%]
+          mobile:pr-[20px]
+          mobile:text-[16px]
+          mobile:font-[sanss]
+          mobile:text-[whitesmoke]
+          mobile:font-extralight;
+  }
+
+  .tea__bottom {
+    @apply desktop:w-[98%]
+      desktop:h-[38px]
+      desktop:border-b-[2px]
+      desktop:border-solid
+      desktop:border-b-[#d3d3d399];
+  }
+
+  .oldness {
+    @apply desktop:w-[100%]
+    desktop:h-fit
+    desktop:pt-[34px]
+    desktop:flex
+    desktop:flex-row
+    desktop:flex-wrap
+    desktop:justify-center
+    desktop:overflow-hidden
+    mobile:w-[100%]
+    mobile:h-fit
+    mobile:pt-[34px]
+    mobile:flex
+    mobile:flex-row
+    mobile:flex-wrap
+    mobile:justify-center
+    mobile:overflow-hidden;
+  }
+
+  .oldness__center {
+    @apply desktop:w-[45%]
+      desktop:h-fit
+     mobile:w-[100%]
+     mobile:h-fit
+     mobile:pl-[25px]
+     mobile:pb-[80px];
+  }
+
+  .oldness__center > h2 {
+    @apply desktop:text-[20px]
+      desktop:text-[#ff0000]
+      desktop:font-[sanss]
+      desktop:font-bold
+      desktop:mb-[15px]
+      desktop:pr-[12px]
+      mobile:text-[18px]
+      mobile:text-[#ff0000]
+      mobile:font-[sanss]
+      mobile:mb-[15px]
+      mobile:pr-[25px]
+      mobile:font-bold
+      dark:text-[black];
+  }
+  .oldness__center__p__1 {
+    @apply desktop:font-[sanss]
+        desktop:text-[#818588]
+        desktop:text-[15px]
+        desktop:leading-[36px]
+        desktop:text-justify
+        desktop:mb-[53px]
+        desktop:pr-[12px]
+        mobile:font-[sanss]
+        mobile:text-[#818588]
+        mobile:text-[15px]
+        mobile:leading-[36px]
+        mobile:text-justify
+        mobile:mb-[53px]
+        mobile:pr-[25px];
+  }
+  .oldness__center__p__2 {
+    @apply desktop:font-[sanss]
+        desktop:text-[#818588]
+        desktop:text-[16px]
+        desktop:leading-[36px]
+        desktop:text-justify
+        desktop:mb-[28px]
+        desktop:pr-[12px]
+       mobile:font-[sanss]
+       mobile:text-[#818588]
+       mobile:text-[15px]
+       mobile:leading-[36px]
+       mobile:text-justify
+       mobile:mb-[28px]
+       mobile:pr-[25px];
+  }
+
+  .oldness__center__p__2 > span {
+    @apply desktop:text-[#ff0000]
+          desktop:font-extrabold
+          mobile:text-[#ff0000]
+          mobile:font-extrabold
+          dark:text-[black];
+  }
+
+  .oldness__center > a {
+    @apply desktop:flex
+          desktop:w-[138px]
+          desktop:h-[41px]
+          desktop:border-[0.8px]
+          desktop:border-solid
+          desktop:border-[#c8c8c8]
+          desktop:rounded-[8px]
+          desktop:items-center
+          desktop:justify-center
+          desktop:no-underline
+          desktop:text-[#818588]
+          desktop:font-[sanss]
+          desktop:text-[15px]
+          desktop:transition-all
+          desktop:duration-300
+         mobile:flex
+         mobile:w-[138px]
+         mobile:h-[41px]
+         mobile:border-[0.8px]
+         mobile:border-solid
+         mobile:border-[#c8c8c8]
+         mobile:rounded-[8px]
+         mobile:items-center
+         mobile:justify-center
+         mobile:no-underline
+         mobile:text-[#818588]
+         mobile:font-[sanss]
+         mobile:text-[15px]
+         mobile:transition-all
+         mobile:duration-300
+         mobile:mr-[18px];
+  }
+
+  .oldness__center > a:hover {
+    @apply desktop:bg-[#ff0000]
+            desktop:text-[whitesmoke]
+            mobile:bg-[#ff0000]
+            mobile:text-[whitesmoke]
+            dark:bg-[black];
+  }
+
+  .pistachio {
+    @apply desktop:w-[100%]
+    desktop:h-[548px]
+    desktop:flex
+    desktop:flex-col
+    desktop:flex-wrap
+        desktop:items-center
+        mobile:w-[100%]
+        mobile:h-[266px]
+        mobile:relative;
+  }
+
+  .pistachio__img {
+    @apply desktop:w-[100%]
+    desktop:h-[510px]
+    desktop:flex
+    desktop:flex-row
+    desktop:flex-wrap
+    desktop:relative
+    mobile:w-[100%]
+      mobile:h-[85%];
+  }
+
+  .pistachio__img > img {
+    @apply desktop:w-[100%]
+        desktop:h-[490px]
+        desktop:object-cover
+        mobile:w-[100%]
+        mobile:h-[100%]
+        mobile:object-cover
+        dark:grayscale;
+  }
+
+  .pistachio__img__bottom {
+    @apply desktop:w-[100%]
+        desktop:h-[21px]
+        desktop:bg-[#e9d69f]
+        mobile:w-[100%]
+        mobile:h-[15%]
+        mobile:bg-[#e9d69f]
+        dark:bg-[black];
+  }
+  .pistachio__img__absolute {
+    @apply desktop:w-[300px]
+        desktop:h-[97px]
+        desktop:bg-[#ed1c24]
+        desktop:absolute
+        desktop:bottom-0
+        desktop:right-[350px]
+        desktop:pr-[17px]
+        desktop:pb-[14px]
+        desktop:flex
+        desktop:flex-col
+        desktop:flex-wrap
+        desktop:justify-between
+        mobile:w-[100%]
+              mobile:h-[93px]
+              mobile:bg-[#ed1c24]
+              mobile:absolute
+              mobile:bottom-0
+              mobile:right-0
+              mobile:pr-[3px]
+              mobile:pb-[10px]
+              mobile:flex
+              mobile:flex-col
+              mobile:flex-wrap
+              mobile:justify-between
+              dark:bg-[#2b2b2b];
+  }
+
+  .pistachio__img__absolute > h2 {
+    @apply desktop:w-[100%]
+        desktop:pt-[5px]
+        desktop:pr-[20px]
+        desktop:text-[29px]
+        desktop:font-[sanss]
+        desktop:text-[whitesmoke]
+        desktop:font-extralight
+            mobile:w-[100%]
+          mobile:pt-[5px]
+          mobile:pr-[20px]
+          mobile:text-[29px]
+          mobile:font-[sanss]
+          mobile:text-[whitesmoke]
+          mobile:font-extralight;
+  }
+
+  .pistachio__img__absolute > h3 {
+    @apply desktop:w-[100%]
+          desktop:pr-[20px]
+          desktop:text-[16px]
+          desktop:font-[sanss]
+          desktop:text-[whitesmoke]
+          desktop:font-extralight
+          mobile:w-[100%]
+          mobile:pr-[20px]
+          mobile:text-[16px]
+          mobile:font-[sanss]
+          mobile:text-[whitesmoke]
+          mobile:font-extralight;
+  }
+
+  .pistachio__bottom {
+    @apply desktop:w-[98%]
+      desktop:h-[38px]
+      desktop:border-b-[2px]
+      desktop:border-solid
+      desktop:border-b-[#d3d3d399];
+  }
+
+  .nuts {
+    @apply desktop:w-[100%]
+    desktop:h-fit
+    desktop:pt-[74px]
+    desktop:flex
+    desktop:flex-row
+    desktop:flex-wrap
+    desktop:justify-center
+    desktop:overflow-hidden
+   mobile:w-[100%]
+   mobile:h-fit
+   mobile:pt-[74px]
+   mobile:flex
+   mobile:flex-row
+   mobile:flex-wrap
+   mobile:justify-center
+   mobile:overflow-hidden;
+  }
+
+  .nuts__center {
+    @apply desktop:w-[48%]
+      desktop:h-fit
+      mobile:w-[100%]
+      mobile:h-fit
+      mobile:pr-[10px]
+      mobile:pl-[10px]
+      mobile:pb-[50px];
+  }
+
+  .nuts__center > h2 {
+    @apply desktop:text-[#ff0000]
+        desktop:text-[20px]
+        desktop:font-[sanss]
+        desktop:font-bold
+        desktop:mb-[15px]
+        mobile:text-[#ff0000]
+        mobile:text-[18px]
+        mobile:font-[sanss]
+        mobile:font-bold
+        mobile:mb-[15px]
+        dark:text-[black];
+  }
+
+  .nuts__center__p__1,
+  .nuts__center__p__2 {
+    @apply desktop:text-[#7a7a7a]
+        desktop:text-[16px]
+        desktop:leading-[35px]
+        desktop:font-[sanss]
+        desktop:text-justify
+        mobile:text-[#7a7a7a]
+        mobile:text-[15px]
+        mobile:leading-[35px]
+        mobile:font-[sanss]
+        mobile:text-justify;
+  }
+
+  .nuts__center__p__2 > span {
+    @apply desktop:text-[#ff0000]
+        desktop:font-bold
+        mobile:text-[#ff0000]
+        mobile:font-bold
+        dark:text-[black];
+  }
+
+  .nuts__center__p__1 {
+    @apply desktop:mb-[21px]
+    mobile:mb-[21px];
+  }
+
+  .nuts__center__p__2 {
+    @apply desktop:mb-[40px]
+     mobile:mb-[40px];
+  }
+
+  .nuts__center > a {
+    @apply desktop:flex
+        desktop:w-[129px]
+        desktop:h-[41px]
+        desktop:border-[0.8px]
+        desktop:border-solid
+        desktop:border-[#c8c8c8]
+        desktop:rounded-[8px]
+        desktop:items-center
+        desktop:justify-center
+        desktop:font-[sanss]
+        desktop:no-underline
+        desktop:text-[15px]
+        desktop:text-[#7c7d7e]
+        desktop:transition-all
+        desktop:duration-300
+        mobile:flex
+        mobile:w-[129px]
+        mobile:h-[41px]
+        mobile:border-[0.8px]
+        mobile:border-solid
+        mobile:border-[#c8c8c8]
+        mobile:rounded-[8px]
+        mobile:items-center
+        mobile:justify-center
+        mobile:font-[sanss]
+        mobile:no-underline
+        mobile:text-[15px]
+        mobile:text-[#7c7d7e]
+        mobile:transition-all
+        mobile:duration-300;
+  }
+
+  .nuts__center > a:hover {
+    @apply desktop:bg-[#ff0000]
+        desktop:text-[whitesmoke]
+        mobile:bg-[#ff0000]
+        mobile:text-[whitesmoke]
+        dark:bg-[black];
+  }
+
+  .background {
+    @apply desktop:w-[100%]
+    desktop:h-[250px]
+    desktop:bg-[aquamarine]
+    desktop:bg-fixed
+    mobile:w-[100%]
+    mobile:h-[250px]
+    mobile:bg-[aquamarine];
+  }
+
+  .background {
+    background-image: url(../../../image/background/background.png);
+    background-position-x: 50%;
+    background-position-y: 50%;
+  }
+  .fixed {
+    position: fixed;
+  }
+
+  .fixed {
+    @apply desktop:w-[40px]
+      desktop:h-[40px]
+      desktop:rounded-[2px]
+      desktop:z-[1000]
+      desktop:bottom-[20px]
+      desktop:left-[20px]
+      mobile:w-[40px]
+      mobile:h-[40px]
+      mobile:rounded-[2px]
+      mobile:z-[1000]
+      mobile:bottom-[20px]
+      mobile:left-[20px];
+  }
+
+  .fixed > a {
+    @apply desktop:w-[100%]
+        desktop:h-[100%]
+        desktop:bg-[#000000]
+        desktop:opacity-[0.4]
+        desktop:rounded-[2px]
+        desktop:flex
+        desktop:items-center
+        desktop:justify-center
+        desktop:transition-all
+        desktop:duration-300
+        mobile:w-[100%]
+        mobile:h-[100%]
+        mobile:bg-[#000000]
+        mobile:opacity-[0.4]
+        mobile:rounded-[2px]
+        mobile:flex
+        mobile:items-center
+        mobile:justify-center
+        mobile:transition-all
+        mobile:duration-300;
+  }
+
+  .fixed > a:hover {
+    @apply desktop:bg-black
+          desktop:opacity-[1]
+          mobile:bg-black
+          mobile:opacity-[1];
+  }
+  .btn {
+    position: fixed;
+  }
+  .btn {
+    @apply desktop:w-[40px]
+    desktop:h-[40px]
+    desktop:rounded-[2px]
+    desktop:z-[1000]
+    desktop:bottom-[20px]
+    desktop:left-[70px]
+    desktop:bg-[#000000]
+    desktop:opacity-[0.4]
+    desktop:text-[white]
+    desktop:text-[14px]
+    desktop:font-[sanss]
+    mobile:w-[40px]
+    mobile:h-[40px]
+    mobile:rounded-[2px]
+    mobile:z-[1000]
+    mobile:bottom-[20px]
+    mobile:left-[70px]
+    mobile:bg-[#000000]
+    mobile:opacity-[0.4]
+    mobile:text-[14px]
+    mobile:font-[sanss]
+    mobile:text-[white];
+  }
+
+  .btn:hover {
+    @apply desktop:opacity-[1]
+    mobile:opacity-[1];
+  }
+
+  .magazine {
+    @apply desktop:w-[100%]
+    desktop:h-[892px]
+    desktop:flex
+    desktop:flex-col
+    desktop:flex-wrap
+    mobile:h-[1445px]
+    mobile:w-[100%]
+     mobile:flex
+    mobile:flex-col
+    mobile:flex-wrap;
+  }
+
+  .magazine__top {
+    @apply desktop:w-[100%]
+      desktop:h-[120px]
+      desktop:text-[#ff0000]
+      desktop:font-[sanss]
+      desktop:text-[20px]
+      desktop:font-bold
+      desktop:flex
+      desktop:flex-row
+      desktop:flex-wrap
+      desktop:items-center
+      desktop:pr-[308px]
+      mobile:w-[100%]
+      mobile:h-[128px]
+      mobile:text-[#ff0000]
+      mobile:font-[sanss]
+      mobile:text-[20px]
+      mobile:font-bold
+      mobile:flex
+      mobile:flex-row
+      mobile:flex-wrap
+      mobile:items-center
+      mobile:pr-[25px]
+      dark:text-[black];
+  }
+
+  .magazine__bottom {
+    @apply desktop:w-[100%]
+      desktop:h-[772px]
+      desktop:bg-[#cde4b0]
+      desktop:flex
+      desktop:flex-row
+      desktop:flex-wrap
+      desktop:items-center
+      desktop:justify-center
+      desktop:gap-x-[12px]
+      mobile:w-[100%]
+      mobile:h-[1317px]
+      mobile:bg-[#cde4b0]
+      mobile:flex
+      mobile:flex-col
+      mobile:flex-wrap
+      mobile:pt-[40px]
+      mobile:items-center
+      mobile:justify-start
+      mobile:gap-y-[40px]
+      dark:bg-[#2b2b2b];
+  }
+
+  .magazine__bottom__items {
+    @apply desktop:w-[319px]
+        desktop:h-[602px]
+        desktop:bg-[#ffffff]
+        desktop:flex
+        desktop:flex-col
+        desktop:flex-wrap
+        desktop:shadow-[-3px_3px_10px_#2b2b2b99]
+        mobile:w-[331px]
+        mobile:h-[595px]
+        mobile:bg-[#ffffff]
+        mobile:flex
+        mobile:flex-col
+        mobile:flex-wrap
+        mobile:shadow-[-3px_3px_10px_#2b2b2b99];
+  }
+  .magazine__bottom__items__1 {
+    @apply mobile:hidden
+    desktop:w-[319px]
+        desktop:h-[602px]
+        desktop:bg-[#ffffff]
+        desktop:flex
+        desktop:flex-col
+        desktop:flex-wrap
+        desktop:shadow-[-3px_3px_10px_#2b2b2b99];
+  }
+
+  .magazine__bottom__items__link__1 {
+    @apply desktop:block
+          desktop:w-[100%]
+          desktop:h-[312px]
+          mobile:block
+          mobile:w-[100%]
+          mobile:h-[334px];
+  }
+
+  .magazine__bottom__items__link__1 > img {
+    @apply desktop:w-[100%]
+            desktop:h-[100%]
+            desktop:object-cover
+            desktop:transition-all
+            desktop:duration-300
+           mobile:w-[100%]
+           mobile:h-[100%]
+           mobile:object-cover
+           mobile:transition-all
+           mobile:duration-300
+           dark:grayscale;
+  }
+
+  .magazine__bottom__items__link__1 > img:hover {
+    @apply desktop:opacity-[70%]
+    mobile:opacity-[70%];
+  }
+
+  .magazine__bottom__items__link__2 {
+    @apply desktop:block
+          desktop:w-fit
+          desktop:h-auto
+          desktop:no-underline
+          desktop:mt-[30px]
+          desktop:mr-[22px]
+          mobile:block
+          mobile:w-fit
+          mobile:h-auto
+          mobile:no-underline
+          mobile:mt-[30px]
+          mobile:mr-[22px];
+  }
+  .magazine__bottom__items__link__2 > h2 {
+    @apply desktop:text-[20px]
+          desktop:font-[sanss]
+          desktop:font-extralight
+          desktop:text-[#ff0000]
+         mobile:text-[20px]
+         mobile:font-[sanss]
+         mobile:font-extralight
+         mobile:text-[#ff0000]
+         dark:text-[black];
+  }
+
+  .magazine__bottom__items > p {
+    @apply desktop:text-[#7c7d7e]
+            desktop:text-[14px]
+            desktop:leading-[30px]
+            desktop:font-[sanss]
+            desktop:text-justify
+            desktop:px-[22px]
+            desktop:py-[0px]
+            desktop:mt-[13px]
+            mobile:text-[#7c7d7e]
+            mobile:text-[14px]
+            mobile:leading-[30px]
+            mobile:font-[sanss]
+            mobile:text-justify
+            mobile:px-[22px]
+            mobile:py-[0px]
+            mobile:mt-[13px];
+  }
+  .magazine__bottom__items > p > br {
+    @apply mobile:hidden
+    desktop:block;
+  }
+  .magazine__bottom__items__link__3 {
+    @apply desktop:flex
+          desktop:w-[106px]
+          desktop:h-[41px]
+          desktop:border-[0.8px]
+          desktop:border-solid
+          desktop:border-[#d3d3d3ff]
+          desktop:rounded-[8px]
+          desktop:text-[14px]
+          desktop:font-[sanss]
+          desktop:no-underline
+          desktop:text-[#7c7d7e]
+          desktop:items-center
+          desktop:justify-center
+          desktop:mr-[22px]
+          desktop:mt-[24px]
+        
+          desktop:transition-all
+          desktop:duration-300
+          mobile:flex
+          mobile:w-[106px]
+          mobile:h-[41px]
+          mobile:border-[0.8px]
+          mobile:border-solid
+          mobile:border-[#d3d3d3ff]
+          mobile:rounded-[8px]
+          mobile:text-[14px]
+          mobile:font-[sanss]
+          mobile:no-underline
+          mobile:text-[#7c7d7e]
+          mobile:items-center
+          mobile:justify-center
+          mobile:mr-[22px]
+          mobile:mt-[24px]
+          mobile:transition-all
+          mobile:duration-300;
+  }
+
+  .magazine__bottom__items__link__3:hover {
+    @apply desktop:bg-[#ff0000]
+            desktop:text-[whitesmoke]
+            mobile:bg-[#ff0000]
+            mobile:text-[whitesmoke]
+            dark:bg-[black];
+  }
+
+  .video__parent {
+    @apply desktop:w-[100%]
+    desktop:h-[569px]
+    desktop:bg-[#f7f9fb]
+   mobile:w-[100%]
+   mobile:h-fit
+   mobile:bg-[#f7f9fb];
+  }
+  .video {
+    @apply desktop:w-[100%]
+    desktop:h-[569px]
+    desktop:flex
+    desktop:flex-row
+    desktop:flex-wrap
+    desktop:items-start
+    desktop:justify-center
+    desktop:pt-[60px]
+    desktop:gap-x-[16px]
+   mobile:w-[100%]
+   mobile:h-fit
+   mobile:flex
+   mobile:flex-row
+   mobile:flex-wrap
+   mobile:items-start
+   mobile:pt-[40px]
+   mobile:pb-[80px]
+   mobile:justify-center
+   mobile:gap-x-[16px]
+   mobile:gap-y-[55px];
+  }
+  .video__items {
+    @apply desktop:w-[318px]
+      desktop:h-[449px]
+      desktop:shadow-[-3px_3px_5px_#2b2b2b33]
+      desktop:flex
+      desktop:flex-col
+      desktop:flex-wrap
+     mobile:w-[318px]
+     mobile:h-[449px]
+     mobile:shadow-[-3px_3px_5px_#2b2b2b33]
+     mobile:flex
+     mobile:flex-col
+     mobile:flex-wrap;
+  }
+  .video__items__3 {
+    @apply mobile:hidden
+    desktop:w-[318px]
+      desktop:h-[449px]
+      desktop:shadow-[-3px_3px_5px_#2b2b2b33]
+      desktop:flex
+      desktop:flex-col
+      desktop:flex-wrap;
+  }
+
+  .video__items__top {
+    @apply desktop:w-[100%]
+        desktop:h-[180px]
+       mobile:w-[100%]
+       mobile:h-[180px]
+       dark:grayscale;
+  }
+
+  .video__items__top > iframe {
+    @apply desktop:w-[100%]
+        desktop:h-[100%]
+        mobile:w-[100%]
+        mobile:h-[100%]
+        dark:backdrop-grayscale;
+  }
+
+  .video__items__bottom {
+    @apply desktop:w-[100%]
+        desktop:h-[269px]
+        desktop:box-border
+        desktop:border-[0.8px]
+        desktop:border-solid
+        desktop:border-[#dadada]
+        desktop:border-t-[unset]
+        desktop:pr-[20px]
+        desktop:bg-white
+       mobile:w-[100%]
+       mobile:h-[269px]
+       mobile:box-border
+       mobile:border-[0.8px]
+       mobile:border-solid
+       mobile:border-[#dadada]
+       mobile:border-t-[unset]
+       mobile:pr-[20px]
+       mobile:bg-white;
+  }
+
+  .video__items__bottom > h2 {
+    @apply desktop:w-[100%]
+        desktop:font-[sanss]
+        desktop:font-bold
+        desktop:text-[17px]
+        desktop:text-[#ff0000]
+        desktop:pt-[26px]
+        desktop:mb-[24px]
+        mobile:w-[100%]
+        mobile:font-[sanss]
+        mobile:font-bold
+        mobile:text-[17px]
+        mobile:text-[#ff0000]
+        mobile:pt-[26px]
+        mobile:mb-[24px]
+        dark:text-[black];
+  }
+  .video__items__bottom > p {
+    @apply desktop:font-[sanss]
+          desktop:text-[#7c7d7e]
+          desktop:text-[14px]
+          desktop:leading-[27px]
+          desktop:text-justify
+          desktop:pl-[20px]
+          desktop:mb-[21px]
+        mobile:font-[sanss]
+        mobile:text-[#7c7d7e]
+        mobile:text-[14px]
+        mobile:leading-[27px]
+        mobile:text-justify
+        mobile:pl-[20px]
+        mobile:mb-[21px];
+  }
+  .video__items__bottom > a {
+    @apply desktop:flex
+          desktop:w-[144px]
+          desktop:h-[41px]
+          desktop:border-[0.8px]
+          desktop:border-solid
+          desktop:border-[#c8c8c8]
+          desktop:no-underline
+          desktop:rounded-[8px]
+          desktop:items-center
+          desktop:justify-center
+          desktop:font-[sanss]
+          desktop:text-[15px]
+          desktop:text-[#7c7d7e]
+          desktop:transition-all
+          desktop:duration-300
+         mobile:flex
+         mobile:w-[144px]
+         mobile:h-[41px]
+         mobile:border-[0.8px]
+         mobile:border-solid
+         mobile:border-[#c8c8c8]
+         mobile:no-underline
+         mobile:rounded-[8px]
+         mobile:items-center
+         mobile:justify-center
+         mobile:font-[sanss]
+         mobile:text-[15px]
+         mobile:text-[#7c7d7e]
+         mobile:transition-all
+         mobile:duration-300;
+  }
+
+  .video__items__bottom > a:hover {
+    @apply desktop:bg-[#ff0000]
+            desktop:text-[whitesmoke]
+            mobile:bg-[#ff0000]
+            mobile:text-[whitesmoke]
+            dark:bg-[black];
+  }
+
+  .responsibility {
+    @apply desktop:w-[100%]
+    desktop:h-[640px]
+    desktop:flex
+    desktop:flex-col
+    desktop:flex-wrap
+    desktop:items-center
+    desktop:relative
+    mobile:w-[100%]
+    mobile:h-[640px]
+    mobile:flex
+    mobile:flex-col
+    mobile:flex-wrap
+    mobile:items-center
+    mobile:relative;
+  }
+
+  .responsibility__1 {
+    @apply desktop:w-[100%]
+      desktop:h-[600px]
+      desktop:bg-[#105153]
+      desktop:flex
+      desktop:flex-col
+      desktop:flex-wrap
+      mobile:w-[100%]
+      mobile:h-[600px]
+      mobile:bg-[#105153]
+      mobile:flex
+      mobile:flex-col
+      mobile:flex-wrap
+      dark:bg-[#2b2b2b];
+  }
+
+  .responsibility__1__top {
+    @apply desktop:w-[100%]
+        desktop:h-[282px]
+        desktop:flex
+        desktop:items-end
+        desktop:justify-center
+        desktop:pb-[10px]
+        desktop:border-b-[1px]
+        desktop:border-b-[#07787c]
+        desktop:border-solid
+       mobile:w-[100%]
+       mobile:h-[282px]
+       mobile:flex
+       mobile:items-end
+       mobile:justify-center
+       mobile:pb-[10px]
+       mobile:border-b-[1px]
+       mobile:border-b-[#07787c]
+       mobile:border-solid
+       dark:border-b-[whitesmoke];
+  }
+
+  .responsibility__1__top > h2 {
+    @apply desktop:font-[sanss]
+        desktop:text-[#d5ece1]
+        desktop:text-[18px]
+        desktop:font-extralight
+      mobile:font-[sanss]
+      mobile:text-[#d5ece1]
+      mobile:text-[18px]
+      mobile:font-extralight
+      dark:text-[whitesmoke];
+  }
+
+  .responsibility__1__bottom {
+    @apply desktop:w-[100%]
+        desktop:h-[318px]
+        desktop:pt-[4px]
+        desktop:flex
+        desktop:flex-col
+        desktop:flex-wrap
+        desktop:items-center
+       mobile:w-[100%]
+       mobile:h-[318px]
+       mobile:pt-[4px]
+       mobile:flex
+       mobile:flex-col
+       mobile:flex-wrap
+       mobile:items-center;
+  }
+  .responsibility__1__bottom > h2 {
+    @apply desktop:capitalize
+        desktop:font-[sanss]
+        desktop:text-[20px]
+        desktop:text-[#00d8df]
+        desktop:font-extralight
+       mobile:capitalize
+       mobile:font-[sanss]
+       mobile:text-[20px]
+       mobile:text-[#00d8df]
+       mobile:font-extralight
+       dark:text-[whitesmoke];
+  }
+
+  .responsibility__1__bottom > h2 > span {
+    @apply desktop:text-[30px]
+        desktop:text-[#009da2]
+        desktop:font-extralight
+        desktop:font-[sanss]
+       mobile:text-[30px]
+       mobile:text-[#009da2]
+       mobile:font-extralight
+       mobile:font-[sanss]
+       dark:text-[whitesmoke];
+  }
+
+  .responsibility__1__bottom > h3 {
+    @apply desktop:capitalize
+            desktop:font-[sanss]
+            desktop:text-[17px]
+            desktop:text-[#bcbec0]
+            desktop:font-extralight
+            mobile:capitalize
+            mobile:font-[sanss]
+            mobile:text-[17px]
+            mobile:text-[#bcbec0]
+            mobile:font-extralight;
+  }
+
+  .responsibility__2 {
+    @apply desktop:w-[100%]
+      desktop:h-[20px]
+      desktop:bg-[#e9d69f]
+     mobile:w-[100%]
+     mobile:h-[20px]
+     mobile:bg-[#e9d69f]
+     dark:bg-[black];
+  }
+  .responsibility__3 {
+    @apply desktop:w-[98%]
+      desktop:h-[20px]
+      desktop:border-b-[2px]
+      desktop:border-solid
+      desktop:border-b-[#d3d3d3dd]
+     mobile:w-[98%]
+     mobile:h-[20px]
+     mobile:border-b-[2px]
+     mobile:border-solid
+     mobile:border-b-[#d3d3d3dd];
+  }
+  .responsibility__absolute {
+    @apply desktop:absolute
+      desktop:w-[395px]
+      desktop:h-[344px]
+      desktop:bottom-[-12%]
+      desktop:shadow-[-3px_3px_5px_#2b2b2b33]
+       mobile:absolute
+      mobile:w-fit
+      mobile:h-fit
+      mobile:bottom-[-12%]
+      mobile:shadow-[-3px_3px_5px_#2b2b2b33];
+  }
+
+  .responsibility__absolute {
+    right: calc(50% - 395px / 2);
+  }
+
+  .responsibility__absolute > img {
+    @apply desktop:w-[100%]
+     desktop:h-[100%]
+     mobile:w-[395px]
+     mobile:h-[344px]
+     dark:grayscale;
+  }
+
+  .social {
+    @apply desktop:w-[100%]
+    desktop:h-fit
+    desktop:flex
+    desktop:flex-row
+    desktop:flex-wrap
+    desktop:justify-center
+    mobile:w-[100%]
+    mobile:h-fit
+    mobile:flex
+    mobile:flex-row
+    mobile:flex-wrap
+    mobile:justify-center;
+  }
+
+  .social__center {
+    @apply desktop:w-[48%]
+      desktop:h-auto
+      desktop:pt-[127px]
+      mobile:w-[100%]
+      mobile:h-fit
+      mobile:pt-[127px]
+      mobile:pl-[18px]
+      mobile:pr-[18px]
+      mobile:pb-[100px];
+  }
+
+  .social__center > h2 {
+    @apply desktop:text-[#ff0000]
+      desktop:text-[20px]
+      desktop:font-[sanss]
+      desktop:font-bold
+      desktop:mb-[14px]
+      mobile:text-[#ff0000]
+      mobile:text-[18px]
+      mobile:font-[sanss]
+      mobile:font-bold
+      mobile:mb-[14px]
+      dark:text-[black];
+  }
+
+  .social__center > p {
+    @apply desktop:font-[sanss]
+        desktop:text-[#818588]
+        desktop:text-[16px]
+        desktop:leading-[35px]
+        desktop:text-justify
+        desktop:mb-[40px]
+        mobile:font-[sanss]
+        mobile:text-[#818588]
+        mobile:text-[15px]
+        mobile:leading-[35px]
+        mobile:text-justify
+        mobile:mb-[40px];
+  }
+
+  .social__center > p > span {
+    @apply desktop:text-[#ff0000]
+          desktop:font-extrabold
+          mobile:text-[#ff0000]
+          mobile:font-extrabold
+           dark:text-[black];
+  }
+
+  .social__center > a {
+    @apply desktop:flex
+          desktop:w-[133.5px]
+          desktop:h-[41px]
+          desktop:no-underline
+          desktop:flex-row
+          desktop:flex-wrap
+          desktop:items-center
+          desktop:justify-center
+          desktop:border-[0.8px]
+          desktop:border-solid
+          desktop:border-[#c8c8c8]
+          desktop:rounded-[8px]
+          desktop:text-[#7c7d7e]
+          desktop:text-[15px]
+          desktop:font-[sanss]
+          desktop:transition-all
+          desktop:duration-300
+        mobile:flex
+        mobile:w-[133.5px]
+        mobile:h-[41px]
+        mobile:no-underline
+        mobile:flex-row
+        mobile:flex-wrap
+        mobile:items-center
+        mobile:justify-center
+        mobile:border-[0.8px]
+        mobile:border-solid
+        mobile:border-[#c8c8c8]
+        mobile:rounded-[8px]
+        mobile:text-[#7c7d7e]
+        mobile:text-[15px]
+        mobile:font-[sanss]
+        mobile:transition-all
+        mobile:duration-300;
+  }
+
+  .social__center > a:hover {
+    @apply desktop:bg-[#ff0000]
+            desktop:text-[whitesmoke]
+            mobile:bg-[#ff0000]
+            mobile:text-[whitesmoke]
+            dark:bg-[black];
+  }
+
+  .icons {
+    @apply desktop:w-[100%]
+    desktop:h-[96px]
+    desktop:bg-[#eeefef]
+    desktop:flex
+    desktop:flex-row
+    desktop:flex-wrap
+    desktop:items-center
+    desktop:justify-center
+   mobile:w-[100%]
+   mobile:h-[96px]
+   mobile:bg-[#eeefef]
+   mobile:flex
+   mobile:flex-row
+   mobile:flex-wrap
+   mobile:items-center
+   mobile:justify-center;
+  }
+
+  .icons__icon {
+    @apply desktop:w-[53px]
+      desktop:h-[55px]
+     mobile:w-[53px]
+     mobile:h-[55px];
+  }
+  .icons__icon > a {
+    @apply desktop:block
+      desktop:w-[100%]
+      desktop:h-[100%]
+     mobile:block
+     mobile:w-[100%]
+     mobile:h-[100%];
+  }
+
+  .icons__icon > img {
+    @apply desktop:w-[100%]
+         desktop:h-[100%]
+        mobile:w-[100%]
+        mobile:h-[100%];
+  }
+
+  .footer {
+    @apply desktop:w-[100%]
+    desktop:h-[512px]
+    desktop:flex
+    desktop:flex-col
+    desktop:flex-wrap
+   mobile:w-[100%]
+   mobile:h-[1511px]
+   mobile:flex
+   mobile:flex-col
+   mobile:flex-wrap;
+  }
+
+  .footer__top {
+    @apply desktop:w-[100%]
+      desktop:h-[25px]
+      desktop:bg-[#ed1c24]
+    mobile:w-[100%]
+    mobile:h-[25px]
+    mobile:bg-[#ed1c24]
+    dark:bg-[grey];
+  }
+  .footer__bottom {
+    @apply desktop:w-[100%]
+      desktop:h-[487px]
+      desktop:bg-[#282828]
+      desktop:flex
+      desktop:flex-col
+      desktop:flex-wrap
+      desktop:pt-[20px]
+      mobile:hidden;
+  }
+  .footer__bottom__top {
+    @apply desktop:w-[100%]
+        desktop:h-[340px]
+        desktop:flex
+        desktop:flex-row
+        desktop:flex-wrap
+        desktop:justify-center
+        desktop:gap-x-[20px];
+  }
+
+  .footer__bottom__top__items {
+    @apply desktop:w-[152px]
+          desktop:h-[100%]
+          desktop:flex
+          desktop:flex-col
+          desktop:flex-wrap;
+  }
+
+  .footer__bottom__top__items__1 {
+    @apply desktop:w-[100%]
+            desktop:h-[114px]
+            desktop:flex
+            desktop:flex-row
+            desktop:flex-wrap
+            desktop:justify-center
+            desktop:items-start
+            desktop:border-b-[1px]
+            desktop:border-solid
+            desktop:border-b-[#828991];
+  }
+
+  .footer__bottom__top__items__1 > img {
+    @apply desktop:w-[115px]
+            desktop:h-[90px];
+  }
+
+  .footer__bottom__top__items__2 {
+    @apply desktop:w-[100%]
+            desktop:h-[46px]
+            desktop:border-b-[1px]
+            desktop:border-solid
+            desktop:border-b-[#828991]
+            desktop:text-[#ffffff]
+            desktop:text-[16px]
+            desktop:font-[sanss]
+            desktop:flex
+            desktop:justify-center
+            desktop:items-center;
+  }
+
+  .footer__bottom__top__items__3 {
+    @apply desktop:w-[100%]
+            desktop:h-auto
+            desktop:pt-[25px]
+            desktop:flex
+            desktop:flex-col
+            desktop:flex-wrap;
+  }
+
+  .footer__bottom__top__items__3 > a {
+    @apply desktop:no-underline;
+  }
+
+  .footer__bottom__top__items__3 > a > h2 {
+    @apply desktop:text-[#bcbec0]
+            desktop:text-[13px]
+            desktop:font-[sanss]
+            desktop:font-extralight
+            desktop:leading-[28px]
+            desktop:transition-all
+            desktop:duration-300;
+  }
+
+  .footer__bottom__top__items__3 > a > h2:hover {
+    @apply desktop:text-[whitesmoke];
+  }
+
+  .footer__bottom__bottom {
+    @apply desktop:w-[100%]
+        desktop:h-[127px]
+        desktop:flex
+        desktop:flex-col
+        desktop:flex-wrap
+        desktop:items-center
+        desktop:justify-end
+        desktop:pb-[40px];
+  }
+
+  .footer__bottom__bottom > h2 {
+    @apply desktop:text-[#9f9f9f]
+          desktop:text-[14px]
+          desktop:font-[sanss]
+          desktop:font-extralight
+          desktop:leading-[15px];
+  }
+  .footer__bottom__bottom > h3 {
+    @apply desktop:text-[#7b7b7b]
+          desktop:text-[13px]
+          desktop:font-[sanss]
+          desktop:font-extralight;
+  }
+  .footer__bottom__mobile {
+    @apply desktop:hidden
+    mobile:w-[100%]
+    mobile:h-[1335px]
+    mobile:bg-[#282828]
+    mobile:flex
+    mobile:flex-row
+    mobile:flex-wrap
+    mobile:justify-center
+    mobile:pt-[27px]
+   mobile:gap-y-[10px];
+  }
+  .footer__bottom__mobile__bottom {
+    @apply desktop:hidden
+    mobile:w-[100%]
+    mobile:h-[151px]
+    mobile:flex
+    mobile:flex-col
+    mobile:flex-wrap
+    mobile:items-center
+    mobile:justify-end
+    mobile:pb-[40px]
+    mobile:bg-[#282828];
+  }
+  .footer__bottom__mobile__bottom > h2 {
+    @apply mobile:text-[#9f9f9f]
+   mobile:text-[14px]
+   mobile:font-[sanss]
+   mobile:font-extralight
+   mobile:leading-[15px];
+  }
+  .footer__bottom__mobile__bottom > h3 {
+    @apply mobile:text-[#7b7b7b]
+    mobile:text-[13px]
+    mobile:font-[sanss]
+    mobile:font-extralight;
+  }
+
+  .footer__bottom__mobile__items {
+    @apply mobile:w-[92%]
+    mobile:h-fit
+    mobile:flex
+    mobile:flex-row
+    mobile:flex-wrap;
+  }
+
+  .footer__bottom__mobile__items__top {
+    @apply mobile:w-[100%]
+    mobile:h-[107px]
+    mobile:flex
+    mobile:flex-row
+    mobile:flex-wrap
+    mobile:items-start
+    mobile:justify-center
+    mobile:border-b-[1px]
+    mobile:border-solid
+    mobile:border-b-[#828991];
+  }
+  .footer__bottom__mobile__items__top > .img__1 {
+    @apply mobile:w-[115px]
+    mobile:h-[90px];
+  }
+  .footer__bottom__mobile__items__center {
+    @apply mobile:w-[100%]
+    mobile:h-[48px]
+    mobile:font-[sanss]
+    mobile:border-b-[1px]
+    mobile:border-solid
+    mobile:border-b-[#828991]
+    mobile:flex
+    mobile:flex-row
+    mobile:flex-wrap
+    mobile:justify-center
+    mobile:items-center
+    mobile:text-[16px]
+    mobile:text-[#ffffff];
+  }
+  .footer__bottom__mobile__items__bottom {
+    @apply mobile:w-[100%]
+mobile:h-fit
+mobile:flex
+mobile:flex-row
+mobile:flex-wrap
+mobile:gap-y-[8px]
+mobile:pt-[28px];
+  }
+  .footer__bottom__mobile__items__bottom__items {
+    @apply mobile:w-[100%]
+    mobile:h-fit
+    mobile:flex
+    mobile:flex-row
+    mobile:flex-wrap
+    mobile:justify-center
+    mobile:text-[13px]
+    mobile:text-[#bcbec0]
+    mobile:transition-all
+    mobile:duration-300
+    mobile:font-[sanss]
+    mobile:cursor-pointer;
+  }
+
+  .footer__bottom__mobile__items__bottom__items:hover {
+    @apply mobile:text-[#ffffff];
+  }
+  .footer__bottom__mobile__items__bottom__items > a {
+    @apply mobile:block
+    mobile:w-fit
+    mobile:h-fit
+    mobile:no-underline;
+  }
+
+  .magazine__2 {
+    @apply desktop:w-[100%]
+    desktop:h-[3589px]
+    desktop:flex
+    desktop:flex-col
+    desktop:flex-wrap
+    mobile:w-[100%]
+    mobile:h-fit
+    mobile:flex
+    mobile:flex-col
+    mobile:flex-wrap;
+  }
+
+  .magazine__2__top {
+    @apply desktop:w-[100%]
+      desktop:h-[168px]
+      desktop:text-[#ff0000]
+      desktop:font-[sanss]
+      desktop:text-[22px]
+      desktop:font-bold
+      desktop:flex
+      desktop:flex-row
+      desktop:flex-wrap
+      desktop:items-center
+      desktop:pr-[269px]
+      desktop:pt-[30px]
+     mobile:w-[100%]
+     mobile:h-[168px]
+     mobile:text-[#ff0000]
+     mobile:font-[sanss]
+     mobile:text-[22px]
+     mobile:font-bold
+     mobile:flex
+     mobile:flex-row
+     mobile:flex-wrap
+     mobile:items-center
+     mobile:pr-[10px]
+     mobile:pt-[30px]
+     dark:text-[black];
+  }
+
+  .magazine__2__bottom {
+    @apply desktop:w-[100%]
+      desktop:h-[3421px]
+      desktop:pt-[85px]
+      desktop:flex
+      desktop:flex-col
+      desktop:flex-wrap
+      desktop:bg-[#f7f9fb]
+      desktop:gap-y-[100px]
+      mobile:hidden
+      dark:bg-[#2b2b2b];
+  }
+  .magazin__2__bottom__mobile {
+    @apply desktop:hidden
+    mobile:w-[100%]
+    mobile:h-fit
+    mobile:pt-[25px]
+    mobile:flex
+    mobile:flex-col
+    mobile:flex-wrap
+    mobile:items-center
+    mobile:pb-[8px]
+    mobile:bg-[#f7f9fb]
+    mobile:gap-y-[38px];
+  }
+  .magazine__2__bottom__row {
+    @apply desktop:w-[100%]
+    desktop:h-[576px]
+    desktop:flex
+    desktop:flex-row
+    desktop:flex-wrap
+    desktop:gap-x-[12px]
+    desktop:justify-center;
+  }
+
+  .magazine__2__bottom__items {
+    @apply desktop:w-[319px]
+        desktop:h-[576px]
+        desktop:bg-[#ffffff]
+        desktop:flex
+        desktop:flex-col
+        desktop:flex-wrap
+        desktop:shadow-[-3px_3px_10px_#2b2b2b44]
+        desktop:relative
+       mobile:w-[319px]
+       mobile:h-[576px]
+       mobile:bg-[#ffffff]
+       mobile:flex
+       mobile:flex-col
+       mobile:flex-wrap
+       mobile:shadow-[-3px_3px_10px_#2b2b2b44]
+       mobile:relative;
+  }
+
+  .magazine__2__bottom__items__link__1 {
+    @apply desktop:block
+          desktop:w-[100%]
+          desktop:h-[289px]
+       mobile:block
+       mobile:w-[100%]
+       mobile:h-[289px];
+  }
+
+  .magazine__2__bottom__items__link__1 > img {
+    @apply desktop:w-[100%]
+            desktop:h-[100%]
+            desktop:object-cover
+            desktop:transition-all
+            desktop:duration-300
+           mobile:w-[100%]
+           mobile:h-[100%]
+           mobile:object-cover
+           mobile:transition-all
+           mobile:duration-300
+           dark:grayscale;
+  }
+
+  .magazine__2__bottom__items__link__1 > img:hover {
+    @apply desktop:opacity-[70%] 
+    mobile:opacity-[70%];
+  }
+
+  .magazine__2__bottom__items__link__2 {
+    @apply desktop:block
+          desktop:w-fit
+          desktop:h-auto
+          desktop:no-underline
+          desktop:mt-[30px]
+          desktop:mr-[22px]
+        mobile:block
+        mobile:w-fit
+        mobile:h-auto
+        mobile:no-underline
+        mobile:mt-[30px]
+        mobile:mr-[22px];
+  }
+  .magazine__2__bottom__items__link__2 > h2 {
+    @apply desktop:text-[20px]
+          desktop:font-[sanss]
+          desktop:font-extralight
+          desktop:text-[#ff0000]
+      mobile:text-[20px]
+      mobile:font-[sanss]
+      mobile:font-extralight
+      mobile:text-[#ff0000]
+      dark:text-[black];
+  }
+
+  .magazine__2__bottom__items > p {
+    @apply desktop:text-[#7c7d7e]
+            desktop:text-[14px]
+            desktop:leading-[30px]
+            desktop:font-[sanss]
+            desktop:text-justify
+            desktop:px-[22px]
+            desktop:py-[0px]
+            desktop:mt-[13px]
+           mobile:text-[#7c7d7e]
+           mobile:text-[14px]
+           mobile:leading-[30px]
+           mobile:font-[sanss]
+           mobile:text-justify
+           mobile:px-[22px]
+           mobile:py-[0px]
+           mobile:mt-[13px];
+  }
+
+  .magazine__2__bottom__items__link__3 {
+    @apply desktop:flex
+          desktop:w-[106px]
+          desktop:h-[41px]
+          desktop:border-[0.8px]
+          desktop:border-solid
+          desktop:border-[#d3d3d3ff]
+          desktop:rounded-[8px]
+          desktop:text-[14px]
+          desktop:font-[sanss]
+          desktop:no-underline
+          desktop:text-[#7c7d7e]
+          desktop:items-center
+          desktop:justify-center
+          desktop:mr-[22px]
+          desktop:absolute
+          desktop:bottom-[28px]
+          desktop:transition-all
+          desktop:duration-300
+       mobile:flex
+       mobile:w-[106px]
+       mobile:h-[41px]
+       mobile:border-[0.8px]
+       mobile:border-solid
+       mobile:border-[#d3d3d3ff]
+       mobile:rounded-[8px]
+       mobile:text-[14px]
+       mobile:font-[sanss]
+       mobile:no-underline
+       mobile:text-[#7c7d7e]
+       mobile:items-center
+       mobile:justify-center
+       mobile:mr-[22px]
+       mobile:absolute
+       mobile:bottom-[28px]
+       mobile:transition-all
+       mobile:duration-300;
+  }
+
+  .magazine__2__bottom__items__link__3:hover {
+    @apply desktop:bg-[#ff0000]
+            desktop:text-[whitesmoke]
+            mobile:bg-[#ff0000]
+            mobile:text-[whitesmoke]
+            dark:bg-[black];
+  }
+
+  .video__parent__weblog {
+    @apply desktop:w-[100%]
+    desktop:h-fit
+    desktop:bg-[#f7f9fb]
+   mobile:w-[100%]
+   mobile:h-fit
+   mobile:bg-[white]
+   mobile:pt-[31px]
+   mobile:pb-[31px];
+  }
+  .video__weblog {
+    @apply desktop:w-[100%]
+    desktop:h-fit
+    desktop:flex
+    desktop:flex-row
+    desktop:flex-wrap
+    desktop:items-start
+    desktop:justify-center
+    desktop:pt-[25px]
+    desktop:pb-[30px]
+    desktop:gap-x-[16px]
+   mobile:w-[100%]
+   mobile:h-fit
+   mobile:flex
+   mobile:flex-row
+   mobile:flex-wrap
+   mobile:items-start
+   mobile:pt-[60px]
+   mobile:pb-[100px]
+   mobile:justify-center
+   mobile:gap-x-[15px]
+   mobile:gap-y-[55px]
+   mobile:bg-[#f7f9fb];
+  }
+  .video__weblog__items {
+    @apply desktop:w-[318px]
+      desktop:h-[449px]
+      desktop:shadow-[-3px_3px_5px_#2b2b2b33]
+      desktop:flex
+      desktop:flex-col
+      desktop:flex-wrap
+     mobile:w-[318px]
+     mobile:h-[449px]
+     mobile:shadow-[-3px_3px_5px_#2b2b2b33]
+     mobile:flex
+     mobile:flex-col
+     mobile:flex-wrap;
+  }
+
+  .video__weblog__items__top {
+    @apply desktop:w-[100%]
+        desktop:h-[180px]
+       mobile:w-[100%]
+       mobile:h-[180px]
+       dark:grayscale;
+  }
+
+  .video__weblog__items__top > iframe {
+    @apply desktop:w-[100%]
+        desktop:h-[100%]
+        mobile:w-[100%]
+        mobile:h-[100%];
+  }
+
+  .video__weblog__items__bottom {
+    @apply desktop:w-[100%]
+        desktop:h-[269px]
+        desktop:box-border
+        desktop:border-[0.8px]
+        desktop:border-solid
+        desktop:border-[#dadada]
+        desktop:border-t-[unset]
+        desktop:pr-[20px]
+        desktop:bg-white
+       mobile:w-[100%]
+       mobile:h-[269px]
+       mobile:box-border
+       mobile:border-[0.8px]
+       mobile:border-solid
+       mobile:border-[#dadada]
+       mobile:border-t-[unset]
+       mobile:pr-[20px]
+       mobile:bg-white;
+  }
+
+  .video__weblog__items__bottom > h2 {
+    @apply desktop:w-[100%]
+        desktop:font-[sanss]
+        desktop:font-bold
+        desktop:text-[17px]
+        desktop:text-[#ff0000]
+        desktop:pt-[26px]
+        desktop:mb-[24px]
+        mobile:w-[100%]
+        mobile:font-[sanss]
+        mobile:font-bold
+        mobile:text-[17px]
+        mobile:text-[#ff0000]
+        mobile:pt-[26px]
+        mobile:mb-[24px]
+        dark:text-[black];
+  }
+  .video__weblog__items__bottom > p {
+    @apply desktop:font-[sanss]
+          desktop:text-[#7c7d7e]
+          desktop:text-[14px]
+          desktop:leading-[27px]
+          desktop:text-justify
+          desktop:pl-[20px]
+          desktop:mb-[21px]
+        mobile:font-[sanss]
+        mobile:text-[#7c7d7e]
+        mobile:text-[14px]
+        mobile:leading-[27px]
+        mobile:text-justify
+        mobile:pl-[20px]
+        mobile:mb-[21px];
+  }
+  .video__weblog__items__bottom > a {
+    @apply desktop:flex
+          desktop:w-[144px]
+          desktop:h-[41px]
+          desktop:border-[0.8px]
+          desktop:border-solid
+          desktop:border-[#c8c8c8]
+          desktop:no-underline
+          desktop:rounded-[8px]
+          desktop:items-center
+          desktop:justify-center
+          desktop:font-[sanss]
+          desktop:text-[15px]
+          desktop:text-[#7c7d7e]
+          desktop:transition-all
+          desktop:duration-300
+         mobile:flex
+         mobile:w-[144px]
+         mobile:h-[41px]
+         mobile:border-[0.8px]
+         mobile:border-solid
+         mobile:border-[#c8c8c8]
+         mobile:no-underline
+         mobile:rounded-[8px]
+         mobile:items-center
+         mobile:justify-center
+         mobile:font-[sanss]
+         mobile:text-[15px]
+         mobile:text-[#7c7d7e]
+         mobile:transition-all
+         mobile:duration-300;
+  }
+
+  .video__weblog__items__bottom > a:hover {
+    @apply desktop:bg-[#ff0000]
+            desktop:text-[whitesmoke]
+            mobile:bg-[#ff0000]
+            mobile:text-[whitesmoke]
+            dark:bg-[black];
+  }
+}
